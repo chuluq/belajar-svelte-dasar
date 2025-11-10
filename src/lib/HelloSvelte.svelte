@@ -1,10 +1,14 @@
 <script>
+  import Logo from "./Logo.svelte";
+
   const name = "Svelte";
-  const src = "https://www.programmerzamannow.com/img/pzn.png";
+
+  const content = "<p>Hello World</p>";
 </script>
 
 <h1>Hello {name.toUpperCase()}!</h1>
-<img {src} alt="pzn-logo" />
+{@html content}
+<Logo />
 
 <style>
   h1 {
