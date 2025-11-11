@@ -4,16 +4,29 @@
     lastName: "",
   });
 
+  let showGreeting = $state(false);
+
   function sayHello() {
-    person.firstName = document.getElementById("firstName").value;
-    person.lastName = document.getElementById("lastName").value;
+    showGreeting = true;
   }
 </script>
 
 <div>
-  <input type="text" id="firstName" placeholder="First Name" /><br />
-  <input type="text" id="lastName" placeholder="Last Name" /><br />
+  <input
+    type="text"
+    id="firstName"
+    placeholder="First Name"
+    bind:value={person.firstName}
+  /><br />
+  <input
+    type="text"
+    id="lastName"
+    placeholder="Last Name"
+    bind:value={person.lastName}
+  /><br />
   <button onclick={sayHello}>Say Hello</button>
 
-  <h1>Hello {person.firstName} {person.lastName}</h1>
+  {#if showGreeting}
+    <h1>Hello {person.firstName} {person.lastName}</h1>
+  {/if}
 </div>
