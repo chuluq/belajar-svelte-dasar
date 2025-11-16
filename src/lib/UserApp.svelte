@@ -1,5 +1,11 @@
 <script>
   import UserRow from "./UserRow.svelte";
+
+  const user = {
+    id: "1",
+    name: "John",
+    address: "Bandung",
+  };
 </script>
 
 <table>
@@ -11,10 +17,6 @@
     </tr>
   </thead>
   <tbody>
-    <UserRow id="1" name="John" address="Jalan Cinta" />
-    <UserRow id="1" name="John" address="Jalan Cinta" />
-    <UserRow id="1" name="John" address="Jalan Cinta" />
-    <UserRow id="1" name="John" address="Jalan Cinta" />
-    <UserRow id="1" name="John" address="Jalan Cinta" />
+    <UserRow {...user} />
   </tbody>
 </table>
