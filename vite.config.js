@@ -11,6 +11,7 @@ export default defineConfig({
         hello: "hello.html",
         counter: "counter.html",
         sayHello: "say-hello.html",
+        globalCounter: "global-counter.html",
       },
     },
   },
