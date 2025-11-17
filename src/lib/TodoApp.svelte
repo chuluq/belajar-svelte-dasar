@@ -3,16 +3,18 @@
 
   let data = $state([]);
   let id = 0;
+  let inputValue = $state("");
 
   function add(e) {
     e.preventDefault();
 
-    const input = document.getElementById("todo");
-    data.push({
-      id: id++,
-      name: input.value,
-    });
-    input.value = "";
+    if (inputValue.trim()) {
+      data.push({
+        id: id++,
+        name: inputValue,
+      });
+      inputValue = "";
+    }
   }
 
   function remove(id) {
@@ -21,7 +23,7 @@
 </script>
 
 <form>
-  <input type="text" id="todo" />
+  <input type="text" bind:value={inputValue} />
   <button onclick={add}>Add</button>
 </form>
 
