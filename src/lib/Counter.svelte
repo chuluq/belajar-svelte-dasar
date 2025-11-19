@@ -18,5 +18,15 @@
   });
 </script>
 
-<h1 style:color="pink">{count.join(" + ")} = {total}</h1>
+<h1 class={total % 2 === 0 ? "red" : "blue"}>{count.join(" + ")} = {total}</h1>
 <button onclick={increment}>increment</button>
+
+<style>
+  .red {
+    color: red;
+  }
+
+  .blue {
+    color: blue;
+  }
+</style>
